@@ -4,9 +4,11 @@ from os import listdir
 from os.path import isfile, join
 import csv
 
-words = []
-result_file = "CET_4_word_frequency.csv"
+result_file = "result.csv"
+filesPath = './documents/'
 
+
+words = []
 
 def para_to_text(p):
     rs = p._element.xpath('.//w:t')
@@ -20,9 +22,6 @@ def extract_words(my_doc):
         matches = p.findall(texts)
         for m in matches:
             words.append(str.lower(m))
-
-
-filesPath = './CET4/'
 
 
 def extract_file(f):
