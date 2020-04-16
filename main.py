@@ -7,8 +7,8 @@ import csv
 result_file = "result.csv"
 filesPath = './documents/'
 
-
 words = []
+
 
 def para_to_text(p):
     rs = p._element.xpath('.//w:t')
@@ -25,7 +25,7 @@ def extract_words(my_doc):
 
 
 def extract_file(f):
-    if f.startswith("CET") and f.endswith("docx"):
+    if f.endswith("docx"):
         path = filesPath + f
         doc = docx.Document(path)
         extract_words(doc)
